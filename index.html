@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body class="h-screen w-screen flex flex-col items-center bg-green-600">
+    <div
+      class="min-h-96 w-11/12 max-w-md mx-auto flex flex-col items-center justify-center bg-green-200 px-10 py-10 my-20"
+    >
+      <h1 class="text-2xl font-bold text-center">Password Generator</h1>
+      <section class="flex justify-between w-full my-4">
+        <input
+          readonly
+          placeholder="Password"
+          class="w-full bg-transparent"
+          data-passwordDisplay
+        />
+        <button data-copy>
+          <span data-copyMsg></span>
+          <i class="ri-file-copy-line"></i>
+        </button>
+      </section>
+      <section class="w-full">
+        <div class="flex justify-between w-full my-4">
+          <p>Password Length</p>
+          <p data-lengthNumber>7</p>
+        </div>
+        <input
+          class="w-full"
+          type="range"
+          name="slider"
+          id="lengthSlider"
+          min="1"
+          max="20"
+        />
+        <div class="my-4">
+          <div>
+            <input type="checkbox" id="upperCase" />
+            <label for="upperCase">Include Uppercase Letters</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="lowerCase" />
+            <label for="lowerCase">Include Lowercase Letters</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="numbers" />
+            <label for="numbers">Include Numbers</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="symbols" />
+            <label for="symbols">Include Symbols</label>
+          </div>
+        </div>
+
+        <section class="flex justify-between">
+          <h3>Strength</h3>
+          <div data-indicator class="h-6 w-6 bg-white rounded-full"></div>
+        </section>
+        <button class="generateBtn my-4" type="submit">
+          GENERATE PASSWORD
+        </button>
+      </section>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
